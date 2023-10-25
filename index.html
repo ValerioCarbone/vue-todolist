@@ -13,7 +13,7 @@
         <input type="text" placeholder="Nuova task" v-model="taskName">
         <button @click="addTask()">Aggiungi task</button>
         <ul>
-            <li :class="task.done === true ? 'task-done' : ''" v-for="(task, index) in tasks" :key="index" @click="">{{ task.text }}</li>
+            <li :class="task.done === true ? 'task-done' : ''" v-for="(task, index) in tasks" :key="index" @click="task.done = !task.done">{{ task.text }}</li>
         </ul>
     </section>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
