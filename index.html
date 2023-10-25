@@ -11,8 +11,8 @@
 
 <body>
     <section id="app">
-        <input type="text" placeholder="Nuova task" v-model="taskName">
-        <button @click="addTask()">Aggiungi task</button>
+        <input type="text" placeholder="Nuova task" v-model="taskName" @keyup.enter="addTask()">
+        <button  @click="addTask()">Aggiungi task</button>
         <ul>
             <li :class="task.done === true ? 'task-done' : ''" v-for="(task, index) in tasks" :key="index" @click="task.done = !task.done">{{ task.text }}
                 <span><i class="fa-solid fa-xmark" @click.stop="tasks.splice(index,1)"></i></span>
