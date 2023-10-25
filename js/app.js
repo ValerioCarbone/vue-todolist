@@ -3,10 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            newTask: {
-                text:'',
-                done: false
-            },
+            taskName: '',
             tasks: [
                 {
                     text: 'Fare la spesa',
@@ -29,23 +26,25 @@ createApp({
                 },
 
 
-            ]
+            ],
+            index: 0,
         }
 
 
     },
     methods: {
         addTask(){
-            this.tasks.unshift(this.newTask)
-            console.log(this.tasks)
-        },
-        taskStatus(){
-            if (this.tasks.done === true){
-                return 'task-done'
+            taskToAdd = {
+                text: this.taskName,
+                done: false
             }
-        }
+            this.tasks.unshift(taskToAdd)
+            this.taskName = ''
+        },
+        
+        
     },
     mounted() {
-        console.log('hello')
+        
     }
 }).mount('#app')
