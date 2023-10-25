@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/d590f78bae.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,7 +14,9 @@
         <input type="text" placeholder="Nuova task" v-model="taskName">
         <button @click="addTask()">Aggiungi task</button>
         <ul>
-            <li :class="task.done === true ? 'task-done' : ''" v-for="(task, index) in tasks" :key="index" @click="task.done = !task.done">{{ task.text }}</li>
+            <li :class="task.done === true ? 'task-done' : ''" v-for="(task, index) in tasks" :key="index" @click="task.done = !task.done">{{ task.text }}
+                <span><i class="fa-solid fa-xmark" @click.stop="tasks.splice(index,1)"></i></span>
+            </li>
         </ul>
     </section>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
