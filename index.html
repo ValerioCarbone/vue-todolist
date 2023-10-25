@@ -13,7 +13,7 @@
         <input type="text" placeholder="Nuova task" v-model="newTask.text">
         <button @click="addTask()">Aggiungi task</button>
         <ul>
-            <li :class="taskStatus()" v-for="(task, index) in tasks">{{ task.text }}</li>
+            <li :class="taskStatus()" v-for="(task, index) in tasks" :key="index">{{ task.text }}</li>
         </ul>
     </section>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
