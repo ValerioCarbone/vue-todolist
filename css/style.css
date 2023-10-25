@@ -7,3 +7,11 @@
 .task-done{
     text-decoration: line-through;
 }
+
+#app{
+    text-align: center;
+}
+
+.input{
+   margin: 80px 0;
+}
