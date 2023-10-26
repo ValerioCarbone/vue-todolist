@@ -27,7 +27,6 @@ createApp({
 
 
             ],
-            index: 0,
         }
 
 
